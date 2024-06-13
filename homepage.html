@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage - Página barbería</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Página de inicio (Home): 
+Presentación de la Peluquería/Barbería. 
+Menú de navegación para acceder fácilmente a todas las secciones del sitio. 
+Información sobre los servicios, imágenes, horarios, etc -->
+<div class="header-container">
+    <header>
+        <div class="logo"><a href="homepage.html"><img src="images/logo - largo.png" alt="Logo de Estilo Urbano" width="240" height="85"></a></div>
+        <nav>
+            <ul>
+                <li><a href="turnos.html">Turnos</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="informacion.html">Información</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="resenas.html">Reseñas</a></li>
+            </ul>
+        </nav>
+    </header>
+</div>
+    
+    <main>
+        <section class="hero">
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide" id="slide-1">
+                        <img src="images/cortes-part1.jpg" alt="Imagen 1">
+                    </div>
+                    <div class="slide" id="slide-2">
+                        <img src="images/cortes-part2.jpg" alt="Imagen 2">
+                    </div>
+                    
+                </div>
+                <a class="prev" onclick="cambiarSlide(-1)">&#10094;</a>
+                <a class="next" onclick="cambiarSlide(1)">&#10095;</a>
+            </div>
+        </section>
+        
+        <section class="services">
+            <h2>Servicios Destacados</h2>
+            <!-- Lista de servicios destacados -->
+        </section>
+        
+        <section class="promotions">
+            <h2>Promociones</h2>
+            <!-- Promociones actuales -->
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 La Barberia Di Agustin. Todos los derechos reservados.</p>
+    </footer>
+    
+    <script src="js/slider.js"></script>
+</body>
+</html>
