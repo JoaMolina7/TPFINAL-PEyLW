@@ -1,6 +1,12 @@
 /* styles.css */
 
-/* Reset básico */
+@font-face {
+    font-family: 'Arvo';
+    src: url('../fonts/Arvo-Italic.ttf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -18,24 +24,36 @@ body {
 header {
     background-color: white;
     padding: 50px;
-    
 }
 
-.header-container{
+.header-container {
     background-color: white;
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 999;
-    padding : 10px;
+    z-index: 1999;
+    padding: 10px;
+    overflow: hidden; /* Asegura que el pseudo-elemento no se salga del contenedor */
 }
+
+.header-container::after {
+    content: '';
+    position: fixed;
+    z-index: 1998;
+    top: 13%;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 10px; /* Ajusta esta altura según sea necesario */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    pointer-events: none; /* Permite interactuar con los elementos debajo del ::after */
+}
+
 
 header .logo {
     position: absolute;
     left: 2em;
     top: 1.2em;
-    
-
 }
 
 nav ul {
@@ -48,18 +66,23 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin-right: 36px;
+    margin-right: 43px;
 }
 
 nav ul li a {
     color: black;
     text-decoration: none;
     font-size: 25px;
+    font-weight: 500;
     font-family: Montserrat, Arial, Helvetica, sans-serif;
+    transition: color 0.3s, transform 0.3s; /* Agregamos transformación en la transición */
+    display: inline-block;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    color: rgb(250, 129, 0); /* Cambia el color a naranja */
+    transform: scale(1.2); /* Aumenta el tamaño del texto */
+    text-decoration: none; /* Asegura que no haya subrayado */
 }
 
 /* Estilos del main */
@@ -72,11 +95,6 @@ main {
     margin-top: 7em;
 }
 
-
-.services, .promotions {
-    margin: 20px 0;
-}
-
 .services h2, .promotions h2 {
     font-size: 32px;
     margin-bottom: 10px;
@@ -84,14 +102,14 @@ main {
 
 /* Estilos del footer */
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: white;
+    color: #000000; /* Orange */
     text-align: center;
     padding: 10px 0;
     position: absolute;
     width: 100%;
-    
 }
+
 .slider {
     position: relative;
     max-width: 2050px;
@@ -137,4 +155,132 @@ footer {
 
 .prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+.info-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.services, .horarios, .ubicacion {
+    flex: 1 1 calc(33% - 40px);
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 37em;
+}
+
+.services h2, .horarios h2, .ubicacion h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.service {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.service h3 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.logo-medio {
+    z-index: 999;
+    position: absolute; /* Posición absoluta para ubicar el logo sobre el slider */
+    top: 67%; /* Ajusta según sea necesario para alinear verticalmente */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 75px;
+    font-weight: bold;
+    font-family: 'Arvo', Helvetica, Arial, sans-serif;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto */
+    transition: font-size 0.3s;
+    text-decoration: none;
+}
+
+.logo-medio:hover{
+    font-size: 76px;
+}
+
+.btn-agendar-cita {
+    z-index: 999;
+    position: absolute; /* Posición absoluta para ubicar el botón sobre el slider */
+    top: 80%; /* Ajusta según sea necesario para alinear verticalmente */
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 4px;
+    background-color: #ffffff; /* Naranja */
+    padding: 15px 21px;
+    font-size: 18px;
+    font-weight: 650;
+    color: black;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.btn-agendar-cita:hover {
+    background-color: #e59400; /* Naranja más oscuro al pasar el mouse */
+}
+
+.btn-agendar-cita:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 165, 0, 0.5); /* Sombra al enfocar el botón */
+}
+
+body.dark-mode .container {
+    background-color: #1f2937; /* Color de fondo en modo oscuro */
+}
+
+body.dark-mode .btn-agendar-cita {
+    background-color: #d97706; /* Naranja oscuro en modo oscuro */
+    color: white; /* Texto blanco en modo oscuro */
+}
+
+body.dark-mode .btn-agendar-cita:hover {
+    background-color: #b45309; /* Naranja más oscuro al pasar el mouse en modo oscuro */
+}
+
+body.dark-mode .btn-agendar-cita:focus {
+    box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.5); /* Sombra al enfocar el botón en modo oscuro */
+}
+.horarios ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.horarios li {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.horarios .dia {
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    width: 150px; /* Ancho fijo para los días */
+    margin-right: 10em;
+}
+
+.horarios .hora {
+    font-style: italic;
+    text-align: center;
+    display: inline-block;
+    flex: 1;
+
+}
+
+.horarios .cerrado {
+    font-style: italic;
+    text-align: center;
+    display: inline-block;
+    flex: 1;
+    margin-left: 2.5em;
 }

@@ -11,23 +11,27 @@
 Presentación de la Peluquería/Barbería. 
 Menú de navegación para acceder fácilmente a todas las secciones del sitio. 
 Información sobre los servicios, imágenes, horarios, etc -->
-<div class="header-container">
-    <header>
-        <div class="logo"><a href="homepage.html"><img src="images/logo - largo.png" alt="Logo de Estilo Urbano" width="240" height="85"></a></div>
-        <nav>
-            <ul>
-                <li><a href="turnos.html">Turnos</a></li>
-                <li><a href="productos.html">Productos</a></li>
-                <li><a href="informacion.html">Información</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="resenas.html">Reseñas</a></li>
-            </ul>
-        </nav>
-    </header>
-</div>
+    <div class="header-container">
+        <header>
+            <div class="logo"><a href="homepage.html"><img src="images/logo - largo.png" alt="Logo de Estilo Urbano" width="240" height="85"></a></div>
+            <nav>
+                <ul>
+                    <li><a href="turnos.html">Turnos</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="informacion.html">Información</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="resenas.html">Reseñas</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
     
     <main>
         <section class="hero">
+            <div class="logo-medio">La Barberia di Agustin</div>
+            <div class="container-btn">
+                <a href="#" class="btn-agendar-cita">AGENDAR CITA</a>
+            </div>
             <div class="slider">
                 <div class="slides">
                     <div class="slide" id="slide-1">
@@ -36,21 +40,46 @@ Información sobre los servicios, imágenes, horarios, etc -->
                     <div class="slide" id="slide-2">
                         <img src="images/cortes-part2.jpg" alt="Imagen 2">
                     </div>
-                    
+        </section>
+        
+        <section class="info-container">
+            <div class="services">
+                <h2>Servicios</h2>
+                <div class="service">
+                    <h3>Corte de pelo</h3>
+                    <p>Descripción del servicio de corte de pelo.</p>
                 </div>
-                <a class="prev" onclick="cambiarSlide(-1)">&#10094;</a>
-                <a class="next" onclick="cambiarSlide(1)">&#10095;</a>
+                <div class="service">
+                    <h3>Color</h3>
+                    <p>Descripción del servicio de color.</p>
+                </div>
+                <div class="service">
+                    <h3>Corte de barba</h3>
+                    <p>Descripción del servicio de corte de barba.</p>
+                </div>
+                <div class="service">
+                    <h3>Cejas</h3>
+                    <p>Descripción del servicio de cejas.</p>
+                </div>
             </div>
-        </section>
-        
-        <section class="services">
-            <h2>Servicios Destacados</h2>
-            <!-- Lista de servicios destacados -->
-        </section>
-        
-        <section class="promotions">
-            <h2>Promociones</h2>
-            <!-- Promociones actuales -->
+            
+            <div class="horarios">
+                <h2>Horarios</h2>
+                <ul>
+                    <li><span class="dia">Lunes</span><span class="cerrado">Cerrado</span><hr></li>
+                    <li><span class="dia">Martes</span><span class="hora">8:00 AM - 8:00 PM</span><hr></li>
+                    <li><span class="dia">Miercoles</span><span class="hora">8:00 AM - 8:00 PM</span><hr></li>
+                    <li><span class="dia">Jueves</span><span class="hora">8:00 AM - 8:00 PM</span><hr></li>
+                    <li><span class="dia">Viernes</span><span class="hora">8:00 AM - 8:00 PM</span><hr></li>
+                    <li><span class="dia">Sábado</span><span class="hora">8:00 AM - 8:00 PM</span><hr></li>
+                    <li><span class="dia">Domingo</span><span class="hora">8:00 AM - 8:00 PM</span><hr></li>
+                </ul>
+            </div>
+
+            <div class="ubicacion">
+                <h2>Ubicación</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1502.6653282302225!2d-67.83038260802009!3d-38.98049087610206!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a23828e7ed259%3A0x19db2448fdf6665d!2sLa%20barber%C3%ADa%20di%20Agustin!5e0!3m2!1ses-419!2sar!4v1718272247668!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </section>
     </main>
     
