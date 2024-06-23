@@ -25,16 +25,6 @@ Información sobre los servicios, imágenes, horarios, etc -->
                         <a href="#" id="cart-button" class="carrito">
                             <img src="images/carrito.png" alt="Carrito de compras" width="35" height="35">
                         </a>
-                        <div id="cart-dropdown" class="cart-dropdown">
-                            <div class="title-micompra"><span>MI COMPRA</span></div>
-                            <button id="close-cart">Cerrar</button>
-                            <div class="cart-items"></div>
-                            <div class="cart-total">
-                                <span id="cart-total">0.00</span>
-                            </div>
-                            <button id="buy-button" class="buy-button">COMPRAR</button>
-                        </div>
-                        
                     </li>
                 </ul>
             </nav>
@@ -45,7 +35,7 @@ Información sobre los servicios, imágenes, horarios, etc -->
         <section class="hero">
             <div class="logo-medio">La Barberia di Agustin</div>
             <div class="container-btn">
-                <a href="#" class="btn-agendar-cita">AGENDAR CITA</a>
+                <a href="turnos.html" class="btn-agendar-cita">AGENDAR CITA</a>
             </div>
             <div class="slider">
                 <div class="slides">
@@ -101,8 +91,18 @@ Información sobre los servicios, imágenes, horarios, etc -->
     <footer>
         <p>&copy; 2024 La Barberia Di Agustin. Todos los derechos reservados.</p>
     </footer>
+    <div id="overlay"></div>
+    <div id="cart-dropdown" class="cart-dropdown">
+        <div class="title-micompra"><span>MI COMPRA</span><hr></div>
+        <a href="#" class="close-cart" id="cerrar-X"><img src="images/X.png" alt="X" width="35" height="35"></a>
+        <div class="cart-items"></div>
+        <div class="cart-total">
+            <span id="cart-total">0.00</span>
+        </div>
+        <button id="buy-button" class="buy-button">COMPRAR</button>
+    </div>
     
-    <script src="js/slider.js"></script>
     <script src="js/carrito.js"></script>
+    <script src="js/slider.js"></script>
 </body>
 </html>
