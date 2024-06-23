@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turnos - La Barbería di Agustin</title>
+    <link rel="stylesheet" href="css/style-turnos.css">
+</head>
+<body>
+    <div class="header-container">
+        <header>
+            <div class="logo"><a href="homepage.html"><img src="images/logo - largo.png" alt="Logo" width="240" height="85"></a></div>
+            <nav>
+                <ul>
+                    <li><a href="turnos.html">Turnos</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="informacion.html">Información</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="resenas.html">Reseñas</a></li>
+                    <li>
+                        <a href="#" id="cart-button" class="carrito">
+                            <img src="images/carrito.png" alt="Carrito de compras" width="35" height="35">
+                        </a>  
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <div class="container">
+        <h1>Elegí tu peluquero</h1>
+        <div id="peluqueros" class="section">
+            <div class="peluquero" data-id="1">
+                <h2>Danilo</h2>
+                <img src="images/peluquero1.png" alt="Peluquero 1">
+                <div class="container-btn">
+                    <a class="btn-agendar">AGENDAR</a>
+                </div>
+            </div>
+
+            <div class="peluquero" data-id="2">
+                <h2>Nehuen</h2>
+                <img src="images/peluquero2.png" alt="Peluquero 2">
+                <div class="container-btn">
+                    <a class="btn-agendar">AGENDAR</a>
+                </div>
+            </div>
+
+            <div class="peluquero" data-id="3">
+                <h2>Valentin</h2>
+                <img src="images/peluquero3.png" alt="Peluquero 3">
+                <div class="container-btn">
+                    <a class="btn-agendar">AGENDAR</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal de Fechas -->
+    <div id="modal-fechas" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" id="close-fechas">&times;</span>
+            <h2>Selecciona una fecha</h2>
+            <div id="fechas"></div>
+        </div>
+    </div>
+
+    <!-- Modal de Horarios -->
+    <div id="modal-horarios" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" id="close-horarios">&times;</span>
+            <h2>Selecciona un horario</h2>
+            <div id="horarios"></div>
+        </div>
+    </div>
+
+    <script src="js/turnos.js"></script>
+</body>
+</html>
