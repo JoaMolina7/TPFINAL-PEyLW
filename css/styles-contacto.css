@@ -1,0 +1,143 @@
+/* style-turnos.css */
+@import url("../css/styles.css");
+@import url("../css/style-modales.css");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .mensaje{
+    color: #1d1d1d;
+    font-weight: bold;
+    position: absolute;
+    top: 27%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 35px;
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1500px;
+    padding: 65px 36px;
+    background: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 24px;
+    background-color: #1d1d1d;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(37, 37, 37, 0.37);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+
+  .item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 32px rgba(17, 17, 17, 0.37);
+    
+  }
+  
+  .circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .circle svg {
+    width: 40px;
+    height: 40px;
+    fill: none;
+    stroke-width: 2;
+  }
+  
+  .circle.green {
+    background-color: #34d399;
+  }
+  
+  .circle.gradient {
+    background: linear-gradient(to right, #405de6, #5851db, #833ab4);
+  }
+  
+  .circle.blue {
+    background-color: #3b82f6;
+  }
+
+  .circle.white{
+    background-color: rgb(255, 255, 255);
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  p {
+    color: #666;
+  }
+  
+  .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .button svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    stroke-width: 2;
+    vertical-align: middle;
+  }
+  
+  .button.green {
+    color: #34d399;
+  }
+  
+  .button.purple {
+    color: #833ab4;
+  }
+  
+  .button.blue {
+    color: #3b82f6;
+  }
+  
+  .button.white {
+    color: rgb(255, 255, 255);
+  }
+  

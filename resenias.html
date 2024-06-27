@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Barbería</title>
+    <link rel="stylesheet" href="css/style-resenias.css">
+</head>
+<body>
+    <div class="header-container">
+        <header>
+            <div class="logo">
+                <a href="homepage.html"><img src="images/logo - largo.png" alt="Logo" width="240" height="85"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="turnos.html">Turnos</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="informacion.html">Información</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="resenias.html">Reseñas</a></li>
+                    <li>
+                        <a href="#" id="cart-button" class="carrito">
+                            <img src="images/carrito.png" alt="Carrito de compras" width="35" height="35">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <div class="main-container">
+        <div id="modalFormulario" class="divFormulario">
+            <form id="miFormulario">
+            <div class="form-nombrecompleto">
+                <div class="form-group">
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label for="apellido" class="form-label">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" class="form-input">
+                </div>
+            </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="text" id="email" name="email" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label for="servicio" class="form-label">¿Que peluquero te atendió?</label>
+                    <select id="servicio" name="servicio" class="form-select">
+                        <option value="">Seleccione un peluquero</option>
+                        <option value="peluquero1">Danilo</option>
+                        <option value="peluquero2">Nehuén</option>
+                        <option value="peluquero3">Valentin</option>
+                        
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="duracion" class="form-label">Duración de la cita (minutos):</label>
+                    <input type="text" id="duracion" name="duracion" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label for="costo" class="form-label">Costo abonado del servicio:</label>
+                    <input type="text" id="costo" name="costo" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label for="fecha_cita" class="form-label">Fecha de la cita:</label>
+                    <div class="date-inputs">
+                        <input type="text" id="dia" name="dia" placeholder="Día" class="form-input">
+                        <input type="text" id="mes" name="mes" placeholder="Mes" class="form-input">
+                        <input type="text" id="anio" name="anio" placeholder="Año" class="form-input">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="observaciones" class="form-label">Reseña:</label>
+                    <textarea id="observaciones" name="observaciones" class="form-textarea" rows="4" cols="50"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="rating" class="form-label">Calificación:</label>
+                    <div class="rating">
+                        <input type="radio" id="star1" name="rating" value="1"><label for="star1"></label>
+                        <input type="radio" id="star2" name="rating" value="2"><label for="star2"></label>
+                        <input type="radio" id="star3" name="rating" value="3"><label for="star3"></label>
+                        <input type="radio" id="star4" name="rating" value="4"><label for="star4"></label>
+                        <input type="radio" id="star5" name="rating" value="5"><label for="star5"></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Enviar" class="form-button" onclick="return validar();">
+                </div>
+            </form>
+        </div>
+
+        <div id="resenasContainer" class="resenas-container">
+            <div class="resena">
+                <h3>Juan Pérez</h3>
+                <div class="rating">
+                    <span>★★★★☆</span>
+                </div>
+                <p>Excelente servicio y muy profesional</p>
+            </div>
+            <div class="resena">
+                <h3>Lautaro Rao</h3>
+                <div class="rating">
+                    <span>★★★★★</span>
+                </div>
+                <p>Valentin un copado, muy buena atención, el corte espectacular</p>
+            </div>
+            <div class="resena">
+                <h3>Giuliano Vianna</h3>
+                <div class="rating">
+                    <span>★★★★☆</span>
+                </div>
+                <p>Muy buen ambiente en la peluqueria, el corte bárbaro</p>
+            </div>
+            <div class="resena">
+                <h3>Nicolas Oses</h3>
+                <div class="rating">
+                    <span>★★★☆☆</span>
+                </div>
+                <p>Buen corte, muy correcto para trabajar Nehuen. Tal vez siento que el precio es un poco elevado</p>
+            </div>
+            <div class="resena">
+                <h3>Dario Lopilato</h3>
+                <div class="rating">
+                    <span>★★★☆☆</span>
+                </div>
+                <p>Buen corte, pero el servicio al cliente podría mejorar.</p>
+            </div>
+            <div class="resena">
+                <h3>Fernando Martinez</h3>
+                <div class="rating">
+                    <span>★★★★★</span>
+                </div>
+                <p>Excelente servicio el de Valentin, me sentí como en casa, el corte hermoso!</p>
+            </div>
+            <div class="resena">
+                <h3>Tiziano Lamperti</h3>
+                <div class="rating">
+                    <span>★★★★☆</span>
+                </div>
+                <p>Buen corte</p>
+            </div>
+            <div class="resena">
+                <h3>Santiago Lillo</h3>
+                <div class="rating">
+                    <span>★☆☆☆☆</span>
+                </div>
+                <p>Como no van a abrir un lunes?</p>
+            </div>
+            <div class="resena">
+                <h3>Mario Velasquez</h3>
+                <div class="rating">
+                    <span>★★★★★</span>
+                </div>
+                <p>Danilo un capo, nos charlamos todo mientras me cortaba el pelo y me invitó un café! Se ganaron un cliente</p>
+            </div>
+            <!-- Agrega más reseñas ficticias aquí -->
+        </div>
+    </div>
+    <div class="visitar-maps"><a href="https://www.google.com/maps/place/La+barber%C3%ADa+di+Agustin/@-38.9806834,-67.8328716,17z/data=!3m1!4b1!4m6!3m5!1s0x960a23828e7ed259:0x19db2448fdf6665d!8m2!3d-38.9806876!4d-67.8302913!16s%2Fg%2F11pwwzcg0l?entry=ttu">
+        <img src="images\puntuacion-maps.png" alt="puntuacion-maps"></a>
+    <span>¡Visita nuestra puntuación en Google Maps!</span>
+    </div>
+    <div id="overlay"></div>
+    <div id="cart-dropdown" class="cart-dropdown">
+        <div class="title-micompra"><span>MI COMPRA</span><hr></div>
+        <a href="#" class="close-cart" id="cerrar-X"><img src="images/X.png" alt="X" width="35" height="35"></a>
+        <div class="cart-items"></div>
+        <div class="cart-total">
+            <span id="cart-total">0.00</span>
+        </div>
+        <button id="buy-button" class="buy-button">COMPRAR</button>
+
+        <div id="modal-formulario-productos" class="modal">
+            <div class="modal-content">
+                <span class="close" id="close-formulario-productos">&times;</span>
+                <h2>¡Compra realizada!</h2>
+                <div id="formulario-compra"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-exito-compra" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" id="close-exito-compra">&times;</span>
+            <h2>Compra Registrado</h2>
+            <p>Su compra ha sido registrada exitosamente! Pronto nos pondremos en contacto contigo.</p>
+            <a id="cerrar-compra" class="cerrar-button">Cerrar</a>
+        </div>
+    </div>
+
+     <footer>
+        <p>&copy; 2024 La Barberia Di Agustin. Todos los derechos reservados.</p>
+    </footer>
+    <script src="js/carrito.js"></script>
+    <script src="js/resenias.js"></script>
+</body>
+</html>

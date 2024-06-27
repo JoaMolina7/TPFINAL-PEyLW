@@ -1,0 +1,264 @@
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 50000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;  /* Ajuste del ancho del modal */
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.horario, .fecha {
+    background-color: #0077b6;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    color: white;
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+    text-align: center;
+}
+
+.horario:hover, .fecha:hover {
+    background-color: #005a8d;
+    transform: scale(1.1);
+}
+
+#horarios, #fechas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.3em;
+    justify-content: center;
+    align-items: center;
+    width: 100%;  /* Asegúrate de que el grid ocupe el 100% del contenedor */
+    max-width: 800px;  /* Asegúrate de que el ancho máximo no desborde el modal */
+    margin: 0 auto;  /* Centra el grid horizontalmente */
+}
+
+.ocupado {
+    background-color: gray;
+    cursor: default;
+}
+
+.ocupado:hover{
+    background-color: gray;
+    transform: scale(1);
+}
+
+/* Estilos para el formulario dentro del modal */
+#modal-form {
+    display: none;
+    position: fixed;
+    z-index: 20000; /* Un z-index mayor para que esté por encima del modal de horarios */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+#modal-form .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;  /* Ajuste del ancho del modal */
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#modal-form .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#modal-form .close:hover,
+#modal-form .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modal-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+#modal-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+#modal-form .form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #4a5568;
+}
+
+#modal-form .form-input,
+#modal-form .form-select {
+    width: calc(100% - 20px); /* Ajuste para tener en cuenta el padding de 10px */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #cbd5e0;
+    border-radius: 4px;
+    transition: border-color 0.2s ease-in-out;
+}
+
+#modal-form .form-input:focus,
+#modal-form .form-select:focus {
+    outline: none;
+    border-color: #3182ce;
+}
+
+#modal-form .form-button {
+    background-color: #0077b6;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#modal-form .form-button:hover {
+    background-color: #005a8d;
+}
+
+.cerrar-button{ 
+    background-color: #f80000;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    color: white;
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+    text-align: center;
+}
+
+.modal-content p{
+margin-bottom: 1em;
+}
+
+.cerrar-button:hover{
+    background-color: #ff0000;
+    transform: scale(1.1);
+}
+
+#modal-formulario-productos {
+    display: none;
+    position: fixed;
+    z-index: 1001; /* Un z-index mayor para que esté por encima del modal de horarios */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+#modal-formulario-productos .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;  /* Ajuste del ancho del modal */
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#modal-formulario-productos .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#modal-formulario-productos .close:hover,
+#modal-formulario-productos .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modal-formulario-productos h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+#modal-formulario-productos .form-group {
+    margin-bottom: 1.5rem;
+}
+
+#modal-formulario-productos .form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #4a5568;
+}
+
+#modal-formulario-productos .form-input,
+#modal-formulario-productos .form-select {
+    width: calc(100% - 20px); /* Ajuste para tener en cuenta el padding de 10px */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #cbd5e0;
+    border-radius: 4px;
+    transition: border-color 0.2s ease-in-out;
+}
+
+#modal-formulario-productos .form-input:focus,
+#modal-formulario-productos .form-select:focus {
+    outline: none;
+    border-color: #3182ce;
+}
+
+#modal-formulario-productos .form-button {
+    background-color: #0077b6;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#modal-formulario-productos .form-button:hover {
+    background-color: #005a8d;
+}
