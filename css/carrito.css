@@ -1,3 +1,6 @@
+
+@import url("../css/style-modales.css");
+
 .cart-dropdown {
     display: none;
     position: fixed;
@@ -11,6 +14,8 @@
     z-index: 3510; /* Asegurarse de que esté por encima del overlay */
     padding: 20px;
     overflow-y: scroll; /* Añadido para permitir scroll si es necesario */
+    font-family: 'Poppins', sans-serif;
+ 
 }
 
 .cart-items {
@@ -25,6 +30,8 @@
 
 .cart-item h3 {
     margin: 5px 0;
+    font-size: 20px;
+    text-align: center;
 }
 
 .cart-item p {

@@ -1,9 +1,6 @@
+@import url("../css/styles.css");
+@import url("../css/style-modales.css");
 
-@import url("../css/styles.css"); 
-
-body{
-    font-family: Arial, sans-serif;
-}
 .products {
     padding: 20px;
 }

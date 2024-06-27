@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style-turnos.css">
 </head>
 <body>
+
     <div class="header-container">
         <header>
             <div class="logo"><a href="homepage.html"><img src="images/logo - largo.png" alt="Logo" width="240" height="85"></a></div>
@@ -16,7 +17,7 @@
                     <li><a href="productos.html">Productos</a></li>
                     <li><a href="informacion.html">Información</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="resenas.html">Reseñas</a></li>
+                    <li><a href="resenias.html">Reseñas</a></li>
                     <li>
                         <a href="#" id="cart-button" class="carrito">
                             <img src="images/carrito.png" alt="Carrito de compras" width="35" height="35">
@@ -34,7 +35,7 @@
                 <h2>Danilo</h2>
                 <img src="images/peluquero1.png" alt="Peluquero 1">
                 <div class="container-btn">
-                    <a class="btn-agendar">AGENDAR</a>
+                    <a id="btn-agendar1" class="btn-agendar">AGENDAR</a>
                 </div>
             </div>
 
@@ -42,7 +43,7 @@
                 <h2>Nehuen</h2>
                 <img src="images/peluquero2.png" alt="Peluquero 2">
                 <div class="container-btn">
-                    <a class="btn-agendar">AGENDAR</a>
+                    <a id="btn-agendar2" class="btn-agendar">AGENDAR</a>
                 </div>
             </div>
 
@@ -50,7 +51,7 @@
                 <h2>Valentin</h2>
                 <img src="images/peluquero3.png" alt="Peluquero 3">
                 <div class="container-btn">
-                    <a class="btn-agendar">AGENDAR</a>
+                    <a id="btn-agendar3" class="btn-agendar">AGENDAR</a>
                 </div>
             </div>
 
@@ -75,6 +76,58 @@
         </div>
     </div>
 
+    
+    <!-- Modal de Formulario -->
+    <div id="modal-form" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" id="close-formulario">&times;</span>
+            <h2>Complete el formulario</h2>
+            <div id="formulario"></div>
+        </div>
+    </div>
+
+    <!-- Modal de Éxito -->
+<div id="modal-exito" class="modal hidden">
+    <div class="modal-content">
+        <span class="close" id="close-exito">&times;</span>
+        <h2>Turno Registrado</h2>
+        <p>Su turno ha sido registrado exitosamente! Pronto nos pondremos en contacto contigo.</p>
+        <a id="cerrar-exito" class="cerrar-button">Cerrar</a>
+    </div>
+
+   
+</div>
+<footer>
+    <p>&copy; 2024 La Barberia Di Agustin. Todos los derechos reservados.</p>
+</footer>
+    <div id="overlay"></div>
+    <div id="cart-dropdown" class="cart-dropdown">
+        <div class="title-micompra"><span>MI COMPRA</span><hr></div>
+        <a href="#" class="close-cart" id="cerrar-X"><img src="images/X.png" alt="X" width="35" height="35"></a>
+        <div class="cart-items"></div>
+        <div class="cart-total">
+            <span id="cart-total">0.00</span>
+        </div>
+        <button id="buy-button" class="buy-button">COMPRAR</button>
+
+        <div id="modal-formulario-productos" class="modal">
+            <div class="modal-content">
+                <span class="close" id="close-formulario-productos">&times;</span>
+                <h2>¡Compra realizada!</h2>
+                <div id="formulario-compra"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-exito-compra" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" id="close-exito-compra">&times;</span>
+            <h2>Compra Registrado</h2>
+            <p>Su compra ha sido registrada exitosamente! Pronto nos pondremos en contacto contigo.</p>
+            <a id="cerrar-compra" class="cerrar-button">Cerrar</a>
+        </div>
+    </div>
+    <script src="js/carrito.js"></script>
     <script src="js/turnos.js"></script>
 </body>
 </html>

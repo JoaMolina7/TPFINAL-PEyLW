@@ -3,7 +3,15 @@ document.addEventListener('DOMContentLoaded', function() {
     var desplegableCarrito = document.getElementById('cart-dropdown');
     var overlay = document.getElementById('overlay');
     var botonesAgregar = document.querySelectorAll('.add-to-cart');
-
+    const formularioDiv = document.getElementById('formulario-compra');
+    const botonComprar = document.getElementById('buy-button');
+    const modalFormulario = document.getElementById('modal-formulario-productos');
+    const modalCompra = document.getElementById('modal-exito-compra');
+    const closeForm = document.getElementById('close-formulario-productos');
+    const closeCompra = document.getElementById('close-exito-compra');
+    const cerrarExitoBtn = document.getElementById('cerrar-compra');
+    let totalCarrito = 0;
+    
     // Evento para alternar el menú desplegable del carrito
     botonCarrito.addEventListener('click', function(evento) {
         evento.preventDefault(); // Evita la acción predeterminada del enlace
@@ -64,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var contenedorItemsCarrito = document.querySelector('.cart-items');
         var elementoTotalCarrito = document.getElementById('cart-total');
         contenedorItemsCarrito.innerHTML = ''; // Limpiamos el contenedor de items
-        var totalCarrito = 0;
+        totalCarrito = 0;
 
         // Iteramos sobre cada producto en el carrito para mostrarlo
         carrito.forEach(function(item) {
@@ -131,4 +139,135 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Actualizamos la visualización del carrito al cargar la página
     actualizarVisualizacionCarrito();
-});
+    
+    closeForm.addEventListener('click', () => cerrarModal(modalFormulario));
+    closeCompra.addEventListener('click', () => cerrarModal(modalCompra));
+    cerrarExitoBtn.addEventListener('click', () => cerrarModal(modalCompra));
+    
+    
+    botonComprar.addEventListener('click', function() {
+        if(totalCarrito < 1) {
+            alert('No hay productos en el carrito');
+        }else{
+            formularioDiv.innerHTML = '';
+            const formularioHTML = `
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Nombre completo</label>
+                        <input type="text" id="name" class="form-input" placeholder="Ingresa tu nombre completo" />
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Número telefónico</label>
+                        <input type="tel" id="phone" class="form-input" placeholder="Ingresa tu número telefónico" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Correo Electrónico</label>
+                        <input type="email" id="email-carrito" class="form-input" placeholder="Ingresa tu correo electrónico" />
+                    </div>
+                    <div class="form-group">
+                        <label for="precio" id="precio-label" class="form-label">Precio a abonar:</label>
+                        <span id="precio" class="form-price">$${totalCarrito.toFixed(2)}</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="payment" class="form-label">Método de pago</label>
+                        <select id="payment" class="form-select">
+                            <option value="">Selecciona un método de pago</option>
+                            <option value="cash">Efectivo</option>
+                            <option value="mercadopago">Mercado Pago</option>
+                            <option value="credit-card">Tarjeta de Crédito</option>
+                            <option value="debit-card">Tarjeta de Débito</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="form-button">Enviar</button>
+                    </div>
+                </form>
+            `;
+            formularioDiv.innerHTML = formularioHTML;
+            abrirModal(modalFormulario); 
+
+            const contactForm = document.getElementById('contactForm');
+    
+            contactForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const nombre = document.getElementById('name').value;
+                const telefono = document.getElementById('phone').value;
+                const email = document.getElementById('email-carrito').value;
+                const medioPago = document.getElementById('payment').value;
+        
+                // Validación de los campos
+                var esValido = true;
+        
+                // Limpiar mensajes de error anteriores
+                var inputs = document.querySelectorAll('#contactForm input, #contactForm select');
+                inputs.forEach(function(input) {
+                    input.classList.remove('error');
+                    input.style.borderColor = '';
+                    input.style.backgroundColor = '';
+                });
+        
+                // Validar que los campos obligatorios no estén vacíos
+                if (!nombre) {
+                    marcarError('name');
+                    esValido = false;
+                }
+                if (!email) {
+                    marcarError('email-carrito');
+                    esValido = false;
+                }
+                if (!medioPago) {
+                    marcarError('payment');
+                    esValido = false;
+                }
+            
+                if (!telefono) {
+                    marcarError('phone');
+                    esValido = false;
+                }
+                // Validar formato de email
+                var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+                if (email && !emailRegex.test(email)) {
+                    marcarError('email-carrito');
+                    esValido = false;
+                }
+        
+                // Validar que el número de teléfono sea numérico y tenga 9 dígitos
+                var telefonoRegex = /^[0-9]{9,}$/;
+                if (telefono && !telefonoRegex.test(telefono)) {
+                    marcarError('phone');
+                    esValido = false;
+                }
+        
+                // Mostrar mensaje de éxito si todo es válido
+                if (esValido) {
+                    // Mostrar el modal de éxito
+                    abrirModal(modalCompra);
+                    cerrarModal(modalFormulario);
+                    // Limpiar el local storage del carrito
+                    localStorage.removeItem('carrito');
+                    // Actualizar la visualización del carrito para reflejar que está vacío
+                    actualizarVisualizacionCarrito();
+                }
+        
+                return false; // Prevenir el envío del formulario para realizar la validación
+            });  
+        };
+        
+    });
+
+
+    function marcarError(campoId) {
+        var campo = document.getElementById(campoId);
+        campo.classList.add('error');
+        campo.style.borderColor = 'red';
+        campo.style.backgroundColor = '#fdd';
+    }
+
+    function abrirModal(modal) {
+        modal.style.display = 'block';
+    }
+
+    function cerrarModal(modal) {
+        modal.style.display = 'none';
+    }
+})

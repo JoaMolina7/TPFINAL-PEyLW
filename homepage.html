@@ -11,7 +11,7 @@
 Presentación de la Peluquería/Barbería. 
 Menú de navegación para acceder fácilmente a todas las secciones del sitio. 
 Información sobre los servicios, imágenes, horarios, etc -->
-    <div class="header-container">
+    <div class="header-container" id="header-container">
         <header>
             <div class="logo"><a href="homepage.html"><img src="images/logo - largo.png" alt="Logo" width="240" height="85"></a></div>
             <nav>
@@ -20,7 +20,7 @@ Información sobre los servicios, imágenes, horarios, etc -->
                     <li><a href="productos.html">Productos</a></li>
                     <li><a href="informacion.html">Información</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="resenas.html">Reseñas</a></li>
+                    <li><a href="resenias.html">Reseñas</a></li>
                     <li>
                         <a href="#" id="cart-button" class="carrito">
                             <img src="images/carrito.png" alt="Carrito de compras" width="35" height="35">
@@ -51,21 +51,18 @@ Información sobre los servicios, imágenes, horarios, etc -->
             <div class="services">
                 <h2>Servicios</h2>
                 <div class="service">
-                    <h3>Corte de pelo</h3>
-                    <p>Descripción del servicio de corte de pelo.</p>
-                </div>
-                <div class="service">
+                    <h3>Corte</h3>
                     <h3>Color</h3>
-                    <p>Descripción del servicio de color.</p>
+                    <h3>Barba</h3>
                 </div>
-                <div class="service">
-                    <h3>Corte de barba</h3>
-                    <p>Descripción del servicio de corte de barba.</p>
+                <div class="cortes">
+                    <img src="images/corte16.png" alt="Corte1">
+                    <img src="images/corte17.png" alt="Corte1">
+                    <img src="images/corte18.png" alt="Corte1">
+                    <img src="images/corte19.png" alt="Corte1">
+                    <img src="images/corte20.png" alt="Corte1">
                 </div>
-                <div class="service">
-                    <h3>Cejas</h3>
-                    <p>Descripción del servicio de cejas.</p>
-                </div>
+    
             </div>
             
             <div class="horarios">
@@ -100,6 +97,23 @@ Información sobre los servicios, imágenes, horarios, etc -->
             <span id="cart-total">0.00</span>
         </div>
         <button id="buy-button" class="buy-button">COMPRAR</button>
+
+        <div id="modal-formulario-productos" class="modal">
+            <div class="modal-content">
+                <span class="close" id="close-formulario-productos">&times;</span>
+                <h2>¡Compra realizada!</h2>
+                <div id="formulario-compra"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-exito-compra" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" id="close-exito-compra">&times;</span>
+            <h2>Compra Registrado</h2>
+            <p>Su compra ha sido registrada exitosamente! Pronto nos pondremos en contacto contigo.</p>
+            <a id="cerrar-compra" class="cerrar-button">Cerrar</a>
+        </div>
     </div>
     
     <script src="js/carrito.js"></script>

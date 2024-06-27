@@ -1,6 +1,7 @@
 /* styles.css */
 @import url("../css/header.css"); /* Importa el archivo header.css */
 @import url("../css/carrito.css");
+@import url("../css/style-modales.css");
 
 @font-face {
     font-family: 'Arvo';
@@ -16,7 +17,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #f4f4f4;
@@ -122,10 +123,14 @@ footer {
 .service {
     margin-bottom: 15px;
     text-align: center;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content:space-evenly;
 }
 
 .service h3 {
-    font-size: 24px;
+    font-size: 30px;
     margin-bottom: 5px;
 }
 
@@ -224,3 +229,20 @@ body.dark-mode .btn-agendar-cita:focus {
     flex: 1;
     margin-left: 2.5em;
 }
+
+.cortes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 10px;
+}
+
+.cortes img{ 
+    width: calc(33.33% - 18px);
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
